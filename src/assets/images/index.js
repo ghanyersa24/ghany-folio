@@ -10,6 +10,14 @@ import comika from './projects/comika.png';
 import shiftacademy from './projects/shiftacademy.jpg';
 import nikaah from './projects/nikaahid.jpg';
 
+// Foto profil:
+// 1. Taruh file di src/assets/images/profile/ (mis. ghany.jpg)
+// 2. Uncomment baris import & nilai profile di bawah.
+// 3. Selama belum ada, hero akan menampilkan inisial "GE" sebagai fallback.
+import ghany from './profile/ghany.jpg';
+
+export const profileImage = ghany;
+
 export const projectImages = {
   talentics,
   fifgroup:
