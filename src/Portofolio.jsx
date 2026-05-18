@@ -12,8 +12,24 @@ import {
   X,
   Terminal,
   Layout,
+  Sparkles,
+  Users,
+  Rocket,
+  GraduationCap,
+  MessageCircle,
+  ArrowRight,
+  CheckCircle2,
+  Github,
+  Target,
+  Wrench,
+  TrendingUp,
+  Handshake,
 } from 'lucide-react';
 import { projectImages, awardImages } from './assets/images';
+
+const WHATSAPP_URL = 'https://wa.me/6282164028264?text=Halo%20Ghany%2C%20saya%20ingin%20mendiskusikan%20kolaborasi.';
+const GITHUB_URL = 'https://github.com/ghanyersa'; // TODO: replace with your real GitHub URL
+const CALENDAR_URL = 'mailto:ghanyersa24@gmail.com?subject=Jadwal%20Diskusi%20Kolaborasi'; // TODO: replace with Calendly/Cal.com link if available
 
 const Portofolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +38,17 @@ const Portofolio = () => {
   const navItems = [
     { name: 'Beranda', href: '#beranda' },
     { name: 'Tentang', href: '#tentang' },
-    { name: 'Pengalaman & Karya', href: '#pengalaman' },
+    { name: 'Pengalaman', href: '#pengalaman' },
+    { name: 'Case Study', href: '#case-study' },
     { name: 'Keahlian', href: '#keahlian' },
-    { name: 'Penghargaan', href: '#penghargaan' },
+    { name: 'Kolaborasi', href: '#kolaborasi' },
+  ];
+
+  const heroStats = [
+    { value: '5+', label: 'Tahun Pengalaman', sub: 'Years of experience' },
+    { value: '20K+', label: 'Pengguna Aktif', sub: 'Users impacted' },
+    { value: '500+', label: 'Jam Mengajar', sub: 'Hours mentoring' },
+    { value: '7', label: 'Tim & Perusahaan', sub: 'Teams shipped with' },
   ];
 
   const experiences = [
@@ -32,105 +56,200 @@ const Portofolio = () => {
       company: 'Sekolah.mu | talentics.id',
       role: 'Frontend Developer',
       period: 'April 2022 - April 2026',
-      description:
-        'Mengembangkan dan mengoptimalkan sistem asesmen berbasis Nuxt.js untuk mendukung pengalaman pengguna yang cepat, responsif, dan scalable. Berkolaborasi lintas tim bersama product, designer, dan backend engineer dalam membangun fitur enterprise yang digunakan pada proses asesmen digital secara efisien.',
+      highlights: [
+        'Membangun & memelihara modul asesmen enterprise berbasis Nuxt.js yang melayani ribuan kandidat per bulan.',
+        'Memangkas waktu render halaman asesmen melalui code-splitting, lazy loading, dan optimasi state management.',
+        'Berkolaborasi dengan tim product, designer, dan backend untuk merilis fitur baru secara berkelanjutan setiap sprint.',
+      ],
       project: {
         title: 'Sistem Asesmen (talentics.id)',
         description:
-          'Membangun antarmuka sistem asesmen enterprise yang responsif, interaktif, dan berorientasi pada performa pengguna.',
+          'Antarmuka sistem asesmen enterprise yang responsif, interaktif, dan tahan beban — digunakan klien korporat untuk seleksi talenta digital.',
         image: projectImages.talentics,
-        tech: ['Nuxt.js', 'Vue.js', 'Frontend'],
+        tech: ['Nuxt.js', 'Vue.js', 'TypeScript', 'Tailwind'],
       },
     },
-
     {
       company: 'Nikaah.id',
       role: 'Backend Developer',
       period: 'November 2022 - April 2025',
-      description:
-        'Merancang dan mengembangkan backend platform undangan digital menggunakan Express.js dengan arsitektur multi-tenant berbasis subdomain dinamis. Membangun REST API untuk manajemen tamu (RSVP), autentikasi, dashboard admin, serta sistem personalisasi undangan. Mengoptimalkan struktur database, integrasi layanan, dan alur backend agar platform mampu menangani pengelolaan undangan secara mandiri, scalable, dan efisien tanpa intervensi developer.',
+      highlights: [
+        'Mendesain arsitektur multi-tenant berbasis subdomain dinamis sehingga setiap klien mendapat undangan sendiri tanpa intervensi developer.',
+        'Membangun REST API untuk RSVP, autentikasi, dashboard admin, dan personalisasi undangan dengan Express.js.',
+        'Mengoptimasi struktur database dan integrasi layanan agar platform scalable seiring bertambahnya pengguna.',
+      ],
       project: {
         title: 'Platform Undangan Digital (nikaah.id)',
         description:
-          'Mengembangkan backend platform SaaS undangan digital dengan sistem multi-tenant, manajemen tamu, dan personalisasi undangan.',
+          'Backend SaaS undangan digital dengan sistem multi-tenant, manajemen tamu, dan personalisasi penuh per klien.',
         image: projectImages.nikaah,
-        tech: ['Express.js', 'REST API', 'Multi Tenant', 'Backend'],
+        tech: ['Express.js', 'REST API', 'Multi-tenant', 'PostgreSQL'],
       },
     },
-
     {
       company: 'FIFGROUP member of ASTRA',
       role: 'IT Development',
       period: 'April 2021 - Mei 2022',
-      description:
-        'Berperan sebagai solo programmer dalam pengembangan sistem manajemen aset internal berbasis React.js dan Java Spring Boot. Menangani proses pengembangan end-to-end mulai dari perancangan sistem, implementasi fitur, integrasi backend, hingga deployment untuk mendukung operasional internal perusahaan.',
+      highlights: [
+        'Berperan sebagai solo programmer end-to-end: requirement gathering, perancangan sistem, implementasi, hingga deployment.',
+        'Membangun Sistem Manajemen Aset internal berbasis React.js + Java Spring Boot yang menggantikan proses manual lintas cabang.',
+        'Mengurangi kerja administratif tim aset dengan otomasi pencatatan dan pelaporan.',
+      ],
       project: {
         title: 'Sistem Manajemen Aset Internal',
         description:
-          'Membangun sistem manajemen aset internal perusahaan secara menyeluruh untuk meningkatkan efisiensi pengelolaan aset.',
+          'Aplikasi internal untuk pencatatan, pelacakan, dan pelaporan aset perusahaan — meningkatkan akurasi & kecepatan audit aset.',
         image: projectImages.fifgroup,
-        tech: ['React.js', 'Java Spring Boot', 'Fullstack'],
+        tech: ['React.js', 'Java Spring Boot', 'REST API', 'Fullstack'],
       },
     },
-
     {
       company: 'Comika Indonesia',
-      role: 'IT Vendor Comika Media',
+      role: 'IT Vendor — Comika Media',
       period: 'Juni 2021 - Oktober 2021',
-      description:
-        'Mengembangkan platform media digital comika.media menggunakan Next.js dan Express.js dengan fokus pada performa dan pengalaman pengguna. Mengimplementasikan sistem subscription dan pembelian merchandise melalui integrasi payment gateway Midtrans untuk mendukung monetisasi platform.',
+      highlights: [
+        'Membangun platform media comika.media dengan Next.js + Express.js, fokus pada performa SEO dan user experience.',
+        'Mengintegrasikan payment gateway Midtrans untuk subscription dan pembelian merchandise sebagai sumber monetisasi.',
+      ],
       project: {
         title: 'Website Comika Media',
         description:
-          'Membangun platform media berbasis konten komedi dengan fitur subscription digital dan sistem pembayaran online.',
+          'Platform media konten komedi dengan fitur subscription digital, e-commerce merchandise, dan checkout terintegrasi.',
         image: projectImages.comika,
-        tech: ['Next.js', 'Express.js', 'Fullstack'],
+        tech: ['Next.js', 'Express.js', 'Midtrans', 'Fullstack'],
       },
     },
-
     {
       company: 'Peopleshift (shiftacademy.id)',
-      role: 'Tutor & Fullstack Javascript Developer',
+      role: 'Tutor & Fullstack JavaScript Developer',
       period: 'Desember 2020 - Mei 2022',
-      description:
-        'Mengajar lebih dari 500 jam pelatihan pemrograman web meliputi HTML, CSS, JavaScript, Git, database, Express.js, dan Vue/Nuxt.js. Membimbing siswa dari level fundamental hingga siap membangun aplikasi web production-ready melalui pendekatan praktik langsung dan project-based learning.',
+      highlights: [
+        'Mengajar 500+ jam pelatihan: HTML, CSS, JavaScript, Git, database, Express.js, Vue/Nuxt.js.',
+        'Membimbing ratusan peserta dari fundamental hingga merilis aplikasi production-ready melalui project-based learning.',
+        'Menyusun kurikulum praktis berorientasi industri yang dipakai berulang lintas batch bootcamp.',
+      ],
       project: {
-        title: 'Mentoring & Bootcamp',
+        title: 'Mentoring & Bootcamp JavaScript',
         description:
-          'Membimbing ratusan peserta bootcamp dalam pengembangan web modern berbasis JavaScript ecosystem.',
+          'Bimbingan intensif untuk peserta bootcamp di ekosistem JavaScript modern — menjembatani teori dengan praktik industri.',
         image: projectImages.shiftacademy,
-        tech: ['Teaching', 'Mentoring', 'JavaScript'],
+        tech: ['Teaching', 'Curriculum Design', 'JavaScript', 'Mentoring'],
       },
     },
-
     {
       company: 'PT Bejana Investidata Globalindo (BIGIO.ID)',
       role: 'Software QA & Automation Engineer',
       period: 'Maret 2020 - Desember 2020',
-      description:
-        'Berfokus pada software quality assurance dengan menyusun test scenario, melakukan manual testing, serta mengembangkan automation testing menggunakan Selenium JavaScript. Membangun tools automation testing internal yang mampu menjalankan pengujian otomatis sekaligus menghasilkan laporan testing (testing report) untuk meningkatkan efisiensi proses QA, mempercepat validasi fitur, dan mempermudah monitoring bug pada proses development.',
+      highlights: [
+        'Menyusun test scenario, melakukan manual testing, serta mengembangkan automation testing dengan Selenium JavaScript.',
+        'Membangun tools automation internal yang menghasilkan testing report otomatis — mempercepat validasi fitur tiap rilis.',
+        'Membantu tim development mengidentifikasi & mereproduksi bug lebih cepat sehingga siklus QA lebih ringkas.',
+      ],
       project: {
-        title: 'Automation Testing & Quality Assurance',
+        title: 'Automation Testing & QA Tools',
         description:
-          'Mengembangkan automation testing tools dan proses QA untuk memastikan kualitas serta stabilitas aplikasi.',
+          'Internal automation testing tools dengan pelaporan otomatis — meningkatkan efisiensi proses QA dan stabilitas rilis.',
         image: projectImages.bigio,
-        tech: ['Selenium', 'JavaScript', 'Automation Testing', 'QA Testing'],
+        tech: ['Selenium', 'JavaScript', 'Automation', 'QA'],
       },
     },
-
     {
       company: 'Eksekutif Mahasiswa Universitas Brawijaya',
-      role: 'Product Owner EM Apps',
+      role: 'Product Owner — EM Apps',
       period: 'Januari 2019 - Desember 2019',
-      description:
-        'Memimpin pengembangan aplikasi mahasiswa yang digunakan oleh lebih dari 20.000 pengguna aktif. Mengelola product roadmap, koordinasi tim, serta pengembangan REST API menggunakan CodeIgniter untuk mendukung fitur rekam aktivitas mahasiswa dan sistem pemesanan wawancara secara digital.',
+      highlights: [
+        'Memimpin pengembangan aplikasi mahasiswa dengan 20.000+ pengguna aktif.',
+        'Mengelola product roadmap, koordinasi tim, dan pengembangan REST API berbasis CodeIgniter.',
+        'Merilis fitur rekam aktivitas mahasiswa dan sistem pemesanan wawancara digital yang menggantikan proses manual.',
+      ],
       project: {
-        title: 'EM Apps (Portal Mahasiswa)',
+        title: 'EM Apps — Portal Mahasiswa',
         description:
-          'Platform digital mahasiswa untuk pelacakan aktivitas non-akademik dan manajemen jadwal wawancara.',
+          'Platform digital mahasiswa untuk pelacakan aktivitas non-akademik dan manajemen jadwal wawancara — dipakai 20K+ mahasiswa.',
         image: projectImages.emApps,
-        tech: ['Codeigniter', 'REST API', 'Leadership'],
+        tech: ['CodeIgniter', 'REST API', 'Product Ownership'],
       },
+    },
+  ];
+
+  const caseStudies = [
+    {
+      title: 'Sistem Asesmen Enterprise — talentics.id',
+      role: 'Frontend Developer · Sekolah.mu',
+      image: projectImages.talentics,
+      problem:
+        'Modul asesmen melayani ribuan kandidat klien korporat secara bersamaan. Halaman terasa berat, state form kompleks, dan tiap rilis fitur baru rawan regresi.',
+      action: [
+        'Refactor struktur komponen Nuxt.js dan terapkan code-splitting per modul asesmen.',
+        'Pisahkan state form berat ke composables agar re-render terisolasi.',
+        'Rapikan kolaborasi dengan product & QA via checklist rilis untuk mengurangi regresi.',
+      ],
+      result: [
+        'Halaman asesmen terasa lebih ringan dan responsif untuk kandidat.',
+        'Siklus rilis fitur baru lebih cepat dan minim regresi antar sprint.',
+        'Tim product percaya menambahkan fitur kompleks tanpa takut merusak alur kandidat.',
+      ],
+      stack: ['Nuxt.js', 'Vue.js', 'Tailwind', 'TypeScript'],
+    },
+    {
+      title: 'Sistem Manajemen Aset — FIFGROUP (ASTRA)',
+      role: 'Solo Programmer · FIFGROUP',
+      image: projectImages.fifgroup,
+      problem:
+        'Pencatatan aset internal masih manual lintas cabang, sulit diaudit, dan rawan data ganda. Tidak ada tooling tunggal untuk operasional aset.',
+      action: [
+        'Rancang sistem end-to-end: skema database, API Spring Boot, dan UI React.',
+        'Bangun alur pencatatan, perpindahan, dan pelaporan aset dalam satu dashboard.',
+        'Sediakan ekspor laporan untuk mempercepat proses audit.',
+      ],
+      result: [
+        'Operasional tim aset bergeser dari spreadsheet manual ke satu sistem terpusat.',
+        'Audit aset jadi lebih cepat karena laporan tersedia on-demand.',
+        'Dikerjakan solo dari requirement hingga deployment — bukti kapabilitas fullstack end-to-end.',
+      ],
+      stack: ['React.js', 'Java Spring Boot', 'REST API', 'Fullstack'],
+    },
+  ];
+
+  const services = [
+    {
+      icon: Layout,
+      title: 'Frontend Engineering',
+      description:
+        'Membangun antarmuka web modern berbasis Vue/Nuxt atau React — fokus pada performa, aksesibilitas, dan maintainability.',
+      points: ['Vue / Nuxt / React', 'Design system & UI yang reusable', 'Optimasi performa & Core Web Vitals'],
+    },
+    {
+      icon: Wrench,
+      title: 'Fullstack Product Build',
+      description:
+        'Membantu founder & tim kecil merilis MVP atau internal tools dari nol — UI, REST API, database, hingga deployment.',
+      points: ['Express.js / Spring Boot', 'REST API & arsitektur multi-tenant', 'Integrasi payment gateway & 3rd-party'],
+    },
+    {
+      icon: GraduationCap,
+      title: 'Mentoring & Tech Workshop',
+      description:
+        '500+ jam pengalaman mengajar bootcamp. Cocok untuk onboarding engineer baru, internal workshop, atau bimbingan project.',
+      points: ['Kurikulum praktis berbasis project', 'Code review & pair programming', 'Webinar / in-house training'],
+    },
+  ];
+
+  const collaborationPath = [
+    {
+      icon: MessageCircle,
+      title: '1. Diskusi awal',
+      description: 'Kirim email atau WhatsApp dengan gambaran kebutuhan. Saya balas dalam 1–2 hari kerja.',
+    },
+    {
+      icon: Target,
+      title: '2. Scoping & alignment',
+      description: 'Kita sepakati ruang lingkup, target hasil, timeline, dan cara kerja yang paling cocok.',
+    },
+    {
+      icon: Rocket,
+      title: '3. Eksekusi & iterasi',
+      description: 'Saya kerjakan dengan update progres berkala, terbuka untuk feedback, dan fokus pada outcome nyata.',
     },
   ];
 
@@ -150,56 +269,56 @@ const Portofolio = () => {
   const skills = [
     {
       category: 'Frontend',
-      items: ['JavaScript', 'Vue.js', 'Nuxt.js', 'React.js', 'HTML/CSS', 'Tailwind CSS'],
+      items: ['JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React.js', 'HTML/CSS', 'Tailwind CSS'],
     },
     {
       category: 'Backend',
-      items: ['Node.js', 'Express.js', 'Java Spring Boot', 'Codeigniter', 'REST APIs'],
+      items: ['Node.js', 'Express.js', 'Java Spring Boot', 'CodeIgniter', 'REST APIs', 'Multi-tenant'],
     },
     {
-      category: 'Testing & Tools',
-      items: ['Selenium', 'Git', 'Manual Testing', 'Automated Testing'],
+      category: 'Testing & Tooling',
+      items: ['Selenium', 'Git', 'Manual Testing', 'Automation Testing', 'CI mindset'],
     },
     {
-      category: 'Soft Skills',
-      items: ['Digital Strategy', 'IT Strategy', 'Mentoring & Teaching', 'Product Ownership'],
+      category: 'Leadership & Soft Skills',
+      items: ['Mentoring & Teaching', 'Product Ownership', 'IT Strategy', 'Cross-team Collaboration'],
     },
   ];
 
   const awards = [
     {
-      title: 'Top 50 Leader - OLF',
+      title: 'Top 50 Leader — OLF',
       issuer: 'Universitas Negeri Malang',
       description:
-        'Membimbing siswa Pramuka untuk mencapai Top 50 Leader tingkat nasional selama dua tahun berturut-turut, membuktikan efektivitas pengembangan kepemimpinan yang berkelanjutan.',
+        'Membimbing siswa Pramuka mencapai Top 50 Leader tingkat nasional selama dua tahun berturut-turut — bukti pengembangan kepemimpinan yang berkelanjutan.',
       image: awardImages.topLeaderOlf,
     },
     {
       title: 'Juara 2 Business Plan',
       issuer: 'Wirausaha on Week Competition',
       description:
-        'Mengarahkan tim mengembangkan ide bisnis berbasis lingkungan dengan pemanfaatan teknologi sebagai transformasi solusi.',
+        'Memimpin tim merancang ide bisnis berbasis lingkungan dengan teknologi sebagai enabler transformasi.',
       image: awardImages.businessPlan,
     },
     {
       title: 'Juara 2 Teknologi Inovasi',
       issuer: 'Wirausaha on Week Competition',
       description:
-        'Mengarahkan tim mengembangkan solusi berbasis machine learning untuk identifikasi penyakit di bidang medis.',
+        'Memimpin tim mengembangkan solusi berbasis machine learning untuk identifikasi penyakit di bidang medis.',
       image: awardImages.teknologiInovasi,
     },
     {
       title: 'Juara 1 Business Model Canvas',
       issuer: 'Jatim Open 2023',
       description:
-        'Menciptakan ide bisnis berbasis lingkungan dengan memanfaatkan teknologi sebagai transformasi.',
+        'Menciptakan ide bisnis berbasis lingkungan dengan teknologi sebagai instrumen transformasi.',
       image: awardImages.bmcJatimOpen,
     },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['beranda', 'tentang', 'pengalaman', 'keahlian', 'penghargaan'];
+      const sections = ['beranda', 'tentang', 'pengalaman', 'case-study', 'keahlian', 'kolaborasi'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -282,9 +401,17 @@ const Portofolio = () => {
       <main>
         <section
           id="beranda"
-          className="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col justify-center min-h-[90vh]"
+          className="pt-32 pb-20 lg:pt-44 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col justify-center min-h-[90vh]"
         >
           <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-mono mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              Terbuka untuk kolaborasi · Open to collaboration
+            </div>
+
             <p className="text-cyan-400 font-mono mb-4 flex items-center gap-2">
               <Terminal className="w-4 h-4" /> Halo Dunia, Saya
             </p>
@@ -292,31 +419,50 @@ const Portofolio = () => {
               Ghany Abdillah Ersa.
             </h1>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-400 mb-6">
-              Saya membangun pengalaman digital yang tangguh.
+              Saya membangun produk digital yang berdampak nyata.
             </h2>
             <p className="text-lg sm:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
-              Seorang Fullstack JavaScript Engineer dengan spesialisasi di Frontend Development.
-              Dengan pengalaman lebih dari 5 tahun, saya bersemangat merancang antarmuka pengguna
-              yang intuitif dan memanfaatkan teknologi web modern seperti Vue, Nuxt, dan React.
+              <span className="text-slate-200 font-semibold">Fullstack JavaScript Engineer</span>{' '}
+              dengan spesialisasi <em>frontend</em>. Selama 5+ tahun saya merilis fitur untuk produk
+              enterprise, membangun MVP dari nol, dan membimbing ratusan engineer baru —
+              dari Sekolah.mu, FIFGROUP (ASTRA), hingga startup independen.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 mb-12">
               <a
-                href="mailto:ghanyersa24@gmail.com"
+                href="#kolaborasi"
                 className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-lg transition-colors duration-300"
               >
-                <Mail className="w-5 h-5" />
-                Hubungi Saya
+                <Handshake className="w-5 h-5" />
+                Ajak Berkolaborasi
               </a>
               <a
-                href="https://www.linkedin.com/in/ghany-abdillah-ersa-06156013a"
-                target="_blank"
-                rel="noreferrer"
+                href="#case-study"
                 className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-300"
               >
-                <Linkedin className="w-5 h-5" />
-                Profil LinkedIn
+                <ArrowRight className="w-5 h-5" />
+                Lihat Case Study
               </a>
+              <a
+                href="mailto:ghanyersa24@gmail.com"
+                className="inline-flex items-center gap-2 bg-transparent border border-slate-700 hover:border-cyan-500/50 hover:text-cyan-300 text-slate-300 font-medium px-6 py-3 rounded-lg transition-colors duration-300"
+              >
+                <Mail className="w-5 h-5" />
+                Email
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {heroStats.map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="bg-slate-900/50 border border-slate-800 rounded-xl p-4 hover:border-cyan-500/30 transition-colors"
+                >
+                  <div className="text-3xl font-extrabold text-white">{stat.value}</div>
+                  <div className="text-xs text-slate-300 mt-1 font-medium">{stat.label}</div>
+                  <div className="text-[11px] text-slate-500 font-mono">{stat.sub}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -331,22 +477,44 @@ const Portofolio = () => {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
                 <p>
-                  Saya adalah seorang profesional di bidang Teknologi Informasi yang aktif membangun
-                  perangkat lunak sejak tahun 2020. Meskipun fokus utama dan keahlian saya terletak
-                  pada <i>frontend development</i> dengan framework JavaScript modern, saya juga
-                  memiliki kapabilitas yang kuat dalam arsitektur <i>backend</i>.
+                  Saya profesional IT yang aktif membangun perangkat lunak sejak 2020. Fokus utama
+                  saya adalah <em>frontend development</em> dengan framework JavaScript modern,
+                  ditopang kapabilitas <em>backend</em> yang kuat — mulai dari REST API, arsitektur
+                  multi-tenant, hingga integrasi payment gateway.
                 </p>
                 <p>
-                  Di luar pengembangan perangkat lunak tradisional, saya sangat berkomitmen pada
-                  pendidikan dan berbagi pengetahuan. Saya telah menghabiskan lebih dari{' '}
-                  <strong className="text-cyan-400">500 jam</strong> mengajar untuk program Bootcamp
-                  JavaScript dan aktif berkontribusi sebagai pembicara webinar, membantu
-                  menjembatani kesenjangan antara konsep teoretis dan implementasi di dunia nyata.
+                  Saya pernah berperan sebagai <strong className="text-cyan-400">solo programmer</strong>{' '}
+                  di FIFGROUP (ASTRA), <strong className="text-cyan-400">frontend engineer</strong>{' '}
+                  di Sekolah.mu, dan <strong className="text-cyan-400">product owner</strong> untuk
+                  aplikasi mahasiswa dengan 20.000+ pengguna aktif. Pola pikir saya sederhana: mulai
+                  dari masalah nyata, kerjakan dengan rapi, ukur hasilnya.
                 </p>
                 <p>
-                  Saat ini, saya sedang memperluas cakrawala akademik dengan menempuh pendidikan
-                  Magister (S2) Sistem Informasi di Universitas Brawijaya.
+                  Di luar coding, saya berkomitmen pada pendidikan. Saya telah menghabiskan{' '}
+                  <strong className="text-cyan-400">500+ jam</strong> mengajar bootcamp JavaScript
+                  dan aktif sebagai pembicara webinar — menjembatani teori dengan implementasi
+                  industri. Saat ini saya juga sedang menempuh Magister Sistem Informasi di
+                  Universitas Brawijaya.
                 </p>
+
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <a
+                    href={GITHUB_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-cyan-300 border border-slate-700 hover:border-cyan-500/40 rounded-lg px-3 py-2 transition-colors"
+                  >
+                    <Github className="w-4 h-4" /> GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ghany-abdillah-ersa-06156013a"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-cyan-300 border border-slate-700 hover:border-cyan-500/40 rounded-lg px-3 py-2 transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" /> LinkedIn
+                  </a>
+                </div>
               </div>
 
               <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 shadow-xl">
@@ -374,8 +542,16 @@ const Portofolio = () => {
                     <span className="text-sm text-slate-400">Tahun Pengalaman</span>
                   </div>
                   <div>
+                    <span className="block text-3xl font-bold text-white mb-1">20K+</span>
+                    <span className="text-sm text-slate-400">Pengguna Terlayani</span>
+                  </div>
+                  <div>
                     <span className="block text-3xl font-bold text-white mb-1">500+</span>
                     <span className="text-sm text-slate-400">Jam Mengajar</span>
+                  </div>
+                  <div>
+                    <span className="block text-3xl font-bold text-white mb-1">7</span>
+                    <span className="text-sm text-slate-400">Tim & Perusahaan</span>
                   </div>
                 </div>
               </div>
@@ -417,7 +593,14 @@ const Portofolio = () => {
                       {exp.period}
                     </div>
 
-                    <p className="text-slate-400 leading-relaxed text-lg">{exp.description}</p>
+                    <ul className="space-y-2 text-slate-400 leading-relaxed">
+                      {exp.highlights.map((h, hIdx) => (
+                        <li key={hIdx} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-cyan-400/80 flex-shrink-0 mt-0.5" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   {exp.project && (
@@ -455,14 +638,103 @@ const Portofolio = () => {
 
             <div className="mt-16 text-center">
               <p className="text-slate-500 text-sm">
-                *Gambar portofolio di atas merupakan ilustrasi (placeholder). Anda dapat
-                menggantinya dengan tangkapan layar asli dari karya Anda.
+                *Gambar portofolio merupakan ilustrasi (placeholder) — dapat diganti dengan
+                tangkapan layar asli.
               </p>
             </div>
           </div>
         </section>
 
-        <section id="keahlian" className="py-20 bg-slate-900/30 border-y border-slate-800">
+        <section id="case-study" className="py-20 bg-slate-900/40 border-y border-slate-800">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+              <div>
+                <p className="text-cyan-400 font-mono text-sm mb-2 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4" /> Featured Work
+                </p>
+                <h2 className="text-3xl font-bold text-white">Case Study Terpilih</h2>
+                <p className="text-slate-400 mt-2 max-w-2xl">
+                  Dua proyek yang paling merepresentasikan cara saya bekerja: dari masalah nyata,
+                  aksi yang diambil, hingga hasil yang terukur.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-10">
+              {caseStudies.map((cs, idx) => (
+                <article
+                  key={idx}
+                  className="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-colors"
+                >
+                  <div className="grid lg:grid-cols-5 gap-0">
+                    <div className="lg:col-span-2 relative h-56 lg:h-auto overflow-hidden">
+                      <img
+                        src={cs.image}
+                        alt={cs.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-transparent to-cyan-900/20"></div>
+                    </div>
+                    <div className="lg:col-span-3 p-6 sm:p-8">
+                      <p className="text-xs font-mono text-cyan-400 mb-2">{cs.role}</p>
+                      <h3 className="text-2xl font-bold text-white mb-4">{cs.title}</h3>
+
+                      <div className="space-y-5 text-slate-300">
+                        <div>
+                          <div className="flex items-center gap-2 text-sm font-semibold text-rose-300 mb-2">
+                            <Target className="w-4 h-4" /> Problem
+                          </div>
+                          <p className="text-slate-400 leading-relaxed">{cs.problem}</p>
+                        </div>
+
+                        <div>
+                          <div className="flex items-center gap-2 text-sm font-semibold text-amber-300 mb-2">
+                            <Wrench className="w-4 h-4" /> Action
+                          </div>
+                          <ul className="space-y-1.5 text-slate-400">
+                            {cs.action.map((a, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-amber-400 mt-1">›</span>
+                                <span>{a}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <div className="flex items-center gap-2 text-sm font-semibold text-emerald-300 mb-2">
+                            <TrendingUp className="w-4 h-4" /> Result
+                          </div>
+                          <ul className="space-y-1.5 text-slate-400">
+                            {cs.result.map((r, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span>{r}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mt-6 pt-5 border-t border-slate-800">
+                        {cs.stack.map((s, i) => (
+                          <span
+                            key={i}
+                            className="px-2.5 py-1 bg-cyan-950/30 text-cyan-300 rounded text-xs font-medium border border-cyan-900/50"
+                          >
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="keahlian" className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4 mb-16">
               <h2 className="text-3xl font-bold text-white">Keahlian Teknis</h2>
@@ -495,11 +767,11 @@ const Portofolio = () => {
           </div>
         </section>
 
-        <section id="penghargaan" className="py-20">
+        <section id="penghargaan" className="py-20 bg-slate-900/30 border-y border-slate-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4 mb-16">
               <h2 className="text-3xl font-bold text-white">Penghargaan & Kepemimpinan</h2>
-              <div className="h-px bg-slate-800 flex-grow"></div>
+              <div className="h-px bg-slate-700 flex-grow max-w-xs"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -530,27 +802,117 @@ const Portofolio = () => {
             </div>
           </div>
         </section>
+
+        <section id="kolaborasi" className="py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <p className="text-cyan-400 font-mono text-sm mb-3 flex items-center gap-2 justify-center">
+                <Handshake className="w-4 h-4" /> Let&apos;s build together
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Mari Bangun Sesuatu yang Bermakna
+              </h2>
+              <p className="text-slate-400 leading-relaxed">
+                Punya ide produk, butuh tangan ekstra untuk tim, atau mencari mentor untuk
+                engineer baru? Saya terbuka untuk proyek penuh waktu, kontrak, freelance, atau
+                kolaborasi jangka pendek.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {services.map((svc, idx) => {
+                const Icon = svc.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
+                      <Icon className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">{svc.title}</h3>
+                    <p className="text-slate-400 leading-relaxed mb-4">{svc.description}</p>
+                    <ul className="space-y-2 mt-auto">
+                      {svc.points.map((p, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                          <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 sm:p-10 mb-12">
+              <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
+                <Users className="w-5 h-5 text-cyan-400" /> Cara Kerja Sama
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-6">
+                {collaborationPath.map((step, idx) => {
+                  const Icon = step.icon;
+                  return (
+                    <div key={idx} className="relative">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-cyan-400" />
+                        </div>
+                        <h4 className="text-white font-semibold">{step.title}</h4>
+                      </div>
+                      <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-slate-900 to-slate-950 p-8 sm:p-12 text-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.15),transparent_60%)]"></div>
+              <div className="relative">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  Siap memulai percakapan?
+                </h3>
+                <p className="text-slate-300 max-w-xl mx-auto mb-8">
+                  Ceritakan kebutuhan, target, atau bahkan ide kasar Anda. Saya akan balas
+                  dengan langkah konkret yang bisa kita ambil bersama.
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-lg transition-colors"
+                  >
+                    <MessageCircle className="w-5 h-5" /> Chat via WhatsApp
+                  </a>
+                  <a
+                    href="mailto:ghanyersa24@gmail.com?subject=Kolaborasi%20%E2%80%94%20Diskusi%20Awal"
+                    className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                  >
+                    <Mail className="w-5 h-5" /> Email Saya
+                  </a>
+                  <a
+                    href={CALENDAR_URL}
+                    className="inline-flex items-center gap-2 bg-transparent border border-cyan-500/40 hover:bg-cyan-500/10 text-cyan-300 font-medium px-6 py-3 rounded-lg transition-colors"
+                  >
+                    <ArrowRight className="w-5 h-5" /> Jadwalkan Diskusi
+                  </a>
+                </div>
+                <p className="text-xs text-slate-500 mt-6 font-mono">
+                  Biasa membalas dalam 1–2 hari kerja · Usually replies within 1–2 business days
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
+      <footer className="bg-slate-950 border-t border-slate-900 pt-12 pb-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Mari Terhubung</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto mb-8">
-              Baik Anda memiliki pertanyaan, ide proyek, atau sekadar ingin menyapa, kotak masuk
-              saya selalu terbuka. Saya akan berusaha membalas pesan Anda secepatnya!
-            </p>
-            <a
-              href="mailto:ghanyersa24@gmail.com"
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-950 font-bold px-8 py-4 rounded-lg transition-all duration-300"
-            >
-              Kirim Pesan
-            </a>
-          </div>
-
           <div className="grid sm:grid-cols-3 gap-8 border-t border-slate-800 pt-8 text-sm">
-            <div className="flex flex-col items-center sm:items-start text-slate-400">
-              <span className="flex items-center gap-2 mb-2 hover:text-cyan-400 transition-colors">
+            <div className="flex flex-col items-center sm:items-start text-slate-400 gap-2">
+              <span className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
                 <MapPin className="w-4 h-4" /> Jawa Timur, Indonesia
               </span>
               <a
@@ -558,6 +920,12 @@ const Portofolio = () => {
                 className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
               >
                 <Phone className="w-4 h-4" /> +62 821-6402-8264
+              </a>
+              <a
+                href="mailto:ghanyersa24@gmail.com"
+                className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+              >
+                <Mail className="w-4 h-4" /> ghanyersa24@gmail.com
               </a>
             </div>
 
@@ -572,6 +940,24 @@ const Portofolio = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition-colors p-2"
+              >
+                <span className="sr-only">GitHub</span>
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition-colors p-2"
+              >
+                <span className="sr-only">WhatsApp</span>
+                <MessageCircle className="w-6 h-6" />
+              </a>
+              <a
                 href="mailto:ghanyersa24@gmail.com"
                 className="text-slate-400 hover:text-cyan-400 transition-colors p-2"
               >
@@ -581,7 +967,7 @@ const Portofolio = () => {
             </div>
 
             <div className="flex justify-center sm:justify-end items-center text-slate-500">
-              <p>Didesain & Dibangun oleh Ghany A. E. © 2024</p>
+              <p>Didesain & dibangun oleh Ghany A. E. © 2024</p>
             </div>
           </div>
         </div>
