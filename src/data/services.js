@@ -11,7 +11,7 @@ export const services = [
     icon: 'wrench',
     title: 'Fullstack Product Build',
     description:
-      'Punya ide produk atau butuh tools internal? Saya bisa bantu dari nol sampai jalan — UI, API, database, sampai siap pakai.',
+      'Punya ide produk atau butuh tools internal? Saya bisa bantu dari nol sampai jalan - UI, API, database, sampai siap pakai.',
     points: ['Express.js / Laravel', 'REST API & arsitektur multi-tenant', 'Integrasi payment gateway & 3rd-party'],
   },
   {
