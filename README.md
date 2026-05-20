@@ -7,10 +7,10 @@ A modern, responsive personal portfolio showcasing experience, projects, technic
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Deploy](https://img.shields.io/badge/GitHub_Pages-Live-222?logo=github)](https://ghanyersa24.github.io/ghany-folio/)
+[![Deploy](https://img.shields.io/badge/GitHub_Pages-Live-222?logo=github)](https://ghany-ersa.github.io/profile/)
 [![License](https://img.shields.io/badge/License-Personal_Use-lightgrey)](#license)
 
-[Live Demo](https://ghanyersa24.github.io/ghany-folio/) · [Report an issue](https://github.com/ghanyersa/ghany-folio/issues) · [Connect on LinkedIn](https://www.linkedin.com/in/ghany-abdillah-ersa-06156013a)
+[Live Demo](https://ghany-ersa.github.io/profile/) · [Report an issue](https://github.com/ghany-ersa/profile/issues) · [Connect on LinkedIn](https://www.linkedin.com/in/ghany-abdillah-ersa-06156013a)
 
 </div>
 
