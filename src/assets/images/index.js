@@ -9,7 +9,8 @@ import talentics from './projects/talentics.png';
 import comika from './projects/comika.png';
 import shiftacademy from './projects/shiftacademy.jpg';
 import nikaah from './projects/nikaahid.jpg';
-import emapps from './projects/emapps.jpg';
+import emApps from './projects/emapps.jpg';
+import brawijayaResearch from './projects/brain.png';
 
 // Foto profil disimpan di public/ agar path-nya statis dan cocok dengan preload di index.html.
 export const profileImage = '/profile/ghany.jpg';
@@ -23,5 +24,6 @@ export const projectImages = {
   nikaah,
   bigio:
     'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=800&auto=format&fit=crop',
-  emApps: emapps,
+  brawijayaResearch,
+  emApps,
 };

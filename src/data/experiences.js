@@ -103,6 +103,23 @@ export const experiences = [
     },
   },
   {
+    company: 'Brawijaya Research',
+    role: 'Product Engineer',
+    period: 'Januari 2020 - Juli 2020',
+    highlights: [
+      'Mengembangkan Portal Data Research Universitas Brawijaya sebagai wadah pengelolaan dan publikasi data riset dan inovasi.',
+      'Membangun frontend menggunakan Nuxt.js dan backend menggunakan CodeIgniter.',
+      'Mengintegrasikan Single Sign-On milik Universitas Brawijaya ke dalam sistem portal.',
+    ],
+    project: {
+      title: 'Portal Data Research Universitas Brawijaya',
+      description:
+        'Platform pengelolaan dan publikasi data riset dan inovasi Universitas Brawijaya, dibangun dengan Nuxt.js dan CodeIgniter, terintegrasi SSO kampus.',
+      image: projectImages.brawijayaResearch,
+      tech: ['Nuxt.js', 'CodeIgniter', 'SSO', 'Fullstack'],
+    },
+  },
+  {
     company: 'Eksekutif Mahasiswa Universitas Brawijaya',
     role: 'Product Owner - EM Apps',
     period: 'Januari 2019 - Desember 2019',

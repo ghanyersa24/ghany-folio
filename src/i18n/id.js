@@ -25,7 +25,7 @@ export const id = {
     { value: '5+', label: 'Tahun Pengalaman', sub: 'Years of experience' },
     { value: '20K+', label: 'Pengguna Aktif', sub: 'Users impacted' },
     { value: '500+', label: 'Jam Mengajar', sub: 'Hours mentoring' },
-    { value: '7', label: 'Tim & Perusahaan', sub: 'Teams shipped with' },
+    { value: '8', label: 'Tim & Perusahaan', sub: 'Teams shipped with' },
   ],
 
   // About Section
@@ -213,6 +213,20 @@ export const id = {
       project: {
         title: 'Automation Testing & QA Tools',
         description: 'Internal automation testing tools dengan pelaporan otomatis - meningkatkan efisiensi proses QA dan stabilitas rilis.',
+      },
+    },
+    {
+      company: 'Brawijaya Research',
+      role: 'Product Engineer',
+      period: 'Januari 2020 - Juli 2020',
+      highlights: [
+        'Mengembangkan Portal Data Research Universitas Brawijaya sebagai wadah pengelolaan dan publikasi data riset dan inovasi.',
+        'Membangun frontend menggunakan Nuxt.js dan backend menggunakan CodeIgniter.',
+        'Mengintegrasikan Single Sign-On milik Universitas Brawijaya ke dalam sistem portal.',
+      ],
+      project: {
+        title: 'Portal Data Research Universitas Brawijaya',
+        description: 'Platform pengelolaan dan publikasi data riset dan inovasi Universitas Brawijaya, dibangun dengan Nuxt.js dan CodeIgniter, terintegrasi SSO kampus.',
       },
     },
     {
