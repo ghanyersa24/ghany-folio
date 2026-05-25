@@ -20,6 +20,20 @@ export const experiments = [
     note: 'Butuh izin kamera & koneksi internet untuk memuat model hand tracking.',
   },
   {
+    icon: 'terminal',
+    title: 'please-test - NPM Library',
+    tagline: 'Selenium WebDriver abstraction untuk automation test yang lebih ekspresif.',
+    description:
+      'Library open-source yang dipublish di npm untuk menyederhanakan penulisan automation test berbasis Selenium WebDriver. Membungkus operasi umum (klik, fill, scroll, wait, assertion) ke dalam satu objek `please` yang ekspresif - mengurangi boilerplate dan membuat test script lebih mudah dibaca.',
+    stack: ['JavaScript', 'Selenium WebDriver', 'npm', 'Mocha', 'Node.js'],
+    links: [
+      {
+        label: 'npm Package',
+        href: 'https://www.npmjs.com/package/please-test',
+      },
+    ],
+  },
+  {
     icon: 'puzzle',
     title: 'WA Blast - Chrome Extension',
     tagline: 'Kirim pesan WhatsApp massal langsung dari browser.',

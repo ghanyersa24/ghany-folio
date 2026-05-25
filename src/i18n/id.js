@@ -263,6 +263,12 @@ export const id = {
       note: 'Butuh izin kamera & koneksi internet untuk memuat model hand tracking.',
     },
     {
+      title: 'please-test - NPM Library',
+      tagline: 'Selenium WebDriver abstraction untuk automation test yang lebih ekspresif.',
+      description: 'Library open-source yang dipublish di npm untuk menyederhanakan penulisan automation test berbasis Selenium WebDriver. Membungkus operasi umum (klik, fill, scroll, wait, assertion) ke dalam satu objek `please` yang ekspresif - mengurangi boilerplate dan membuat test script lebih mudah dibaca.',
+      note: null,
+    },
+    {
       title: 'WA Blast - Chrome Extension',
       tagline: 'Kirim pesan WhatsApp massal langsung dari browser.',
       description: 'Chrome extension untuk mengirim pesan WhatsApp ke banyak kontak sekaligus tanpa perlu tool pihak ketiga. Memanfaatkan WhatsApp Web API yang berjalan di browser, lengkap dengan antarmuka yang simpel untuk input daftar nomor dan pesan kustom.',

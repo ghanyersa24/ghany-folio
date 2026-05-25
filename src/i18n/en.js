@@ -261,6 +261,12 @@ export const en = {
       note: 'Camera permission & internet connection required to load the hand tracking model.',
     },
     {
+      title: 'please-test - NPM Library',
+      tagline: 'Selenium WebDriver abstraction for more expressive automation tests.',
+      description: 'An open-source library published on npm to simplify writing Selenium WebDriver-based automation tests. Wraps common operations (click, fill, scroll, wait, assertion) into a single expressive `please` object - reducing boilerplate and making test scripts easier to read.',
+      note: null,
+    },
+    {
       title: 'WA Blast - Chrome Extension',
       tagline: 'Send bulk WhatsApp messages directly from the browser.',
       description: 'A Chrome extension to send WhatsApp messages to multiple contacts at once without any third-party tool. Leverages the WhatsApp Web API running in the browser, complete with a simple interface for entering contact lists and custom messages.',
